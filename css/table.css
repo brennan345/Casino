@@ -1,0 +1,13 @@
+/* Landscape table: a fixed 16:9 stage scaled to fit the screen (minus notches/gesture bars). */
+.table-screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  padding:var(--t) var(--r) var(--b) var(--l);background:#05190f}
+.stage{--w:calc(100vw - var(--l) - var(--r));--h:calc(100vh - var(--t) - var(--b));
+  width:min(var(--w),calc(var(--h) * 16 / 9));aspect-ratio:16/9;position:relative;
+  background:radial-gradient(ellipse at center,var(--card) 0%,var(--felt) 70%,var(--felt2) 100%);
+  border:3px solid #3b2a18;border-radius:3.5%;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px}
+@supports (height:100dvh){.stage{--w:calc(100dvw - var(--l) - var(--r));--h:calc(100dvh - var(--t) - var(--b))}}
+.stage h2{margin:0;font-size:clamp(1rem,5vh,2rem)}
+.stage p{margin:0;color:var(--dim);font-size:clamp(.7rem,3.5vh,1rem)}
+.stage .back{position:absolute;top:8px;left:8px;min-height:36px;padding:4px 12px}
+.stage .bankchip{position:absolute;top:8px;right:10px;color:var(--gold);font-weight:700}
