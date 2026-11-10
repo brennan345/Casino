@@ -7,6 +7,7 @@ import roulette from './games/roulette/rules.js';
 import baccarat from './games/baccarat/rules.js';
 import craps from './games/craps/rules.js';
 import holdem from './games/holdem/rules.js';
+import * as bjui from './games/blackjack/ui.js';
 
 const GAMES = [
   { id: 'blackjack', rules: blackjack, phase: 1 },
@@ -64,6 +65,11 @@ function renderHome() {
 }
 
 function renderTable(g) {
+  if (g.id === 'blackjack') {
+    $app.innerHTML = '<div class="table-screen"><div class="stage bj" id="stage"></div></div>';
+    bjui.mount(document.getElementById('stage'), () => { location.hash = '#/'; });
+    return;
+  }
   const s = settings.get();
   $app.innerHTML = `<div class="table-screen"><div class="stage">
     <button class="back" id="back">Home</button>
@@ -84,12 +90,19 @@ function renderRule(g) {
     ${g.rules.sections.map(x => `<h3>${x.h}</h3><p>${x.p}</p>`).join('')}</main>`;
 }
 
+function bjExtra() {
+  const s = stats.get('blackjack'), a = s.acc;
+  if (!a || !a.t) return '';
+  const miss = Object.entries(s.missed || {}).sort((x, y) => y[1] - x[1]).slice(0, 5);
+  return `<div class="panel"><h3>Blackjack strategy</h3><div class="row"><span>Accuracy</span><b>${(100 * a.r / a.t).toFixed(1)}% (${a.r}/${a.t})</b></div>${miss.length ? '<h3>Most missed</h3>' + miss.map(([k, n]) => `<div class="row"><span>${k}</span><span>${n}x</span></div>`).join('') : ''}</div>`;
+}
+
 function renderStats() {
   const rows = GAMES.map(g => { const s = stats.get(g.id);
     return `<tr><td>${g.rules.title}</td><td>${s.hands}</td><td class="${cls(s.net)}">${money(s.net)}</td><td>${stats.winRate(s)}</td></tr>`; }).join('');
   $app.innerHTML = `<main class="screen"><div class="top"><a href="#/">Home</a><h2>Stats</h2></div>
     <div class="panel"><table><tr><th>Game</th><th>Hands</th><th>Net</th><th>Win rate</th></tr>${rows}</table></div>
-    <button id="clear">Clear stats</button></main>`;
+    ${bjExtra()}<button id="clear">Clear stats</button></main>`;
   $app.querySelector('#clear').onclick = () => { if (confirm('Clear all stats?')) { stats.resetAll(); renderStats(); } };
 }
 
