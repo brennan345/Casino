@@ -1,5 +1,5 @@
 // Bump VERSION on every deploy, and keep FILES in sync with the repo.
-const VERSION = 'v3';
+const VERSION = 'v4';
 const FILES = [
   './', './index.html', './manifest.json',
   './icons/icon-192.png', './icons/icon-512.png',
