@@ -91,3 +91,23 @@
 .side .sbtns{display:flex;gap:.4cqw}.tbl .side button{padding:.9cqw .5cqw;font-size:1.45cqw;min-width:5.6cqw}
 .tbl .top .seg button{font-size:1.6cqw;padding:.6cqw 1.6cqw}
 .tbl .bottom .chip.sel{outline:.4cqw solid #f0cb62;outline-offset:.2cqw}
+
+/* Baccarat */
+.baccarat .felt .t1{font-size:3.4px}.baccarat .felt .t2{font-size:1.5px}
+.baccarat .hands2{display:flex;justify-content:space-between;padding:1cqw 9cqw 0;height:16cqw}
+.bh{width:26cqw;display:flex;flex-direction:column;align-items:center;gap:.4cqw}
+.bh small{font-size:1.6cqw;letter-spacing:.3cqw;color:#e2c262}
+.bh .cards{display:flex;min-height:8.9cqw}.bh .tot{font-size:2.8cqw;font-weight:700}
+.bh.win small{text-shadow:0 0 1cqw #f0cb62;color:#fff}
+.baccarat .brow{display:flex;gap:1cqw;justify-content:center;align-items:center;height:12.5cqw}
+.plate{display:grid;grid-template-rows:repeat(6,1.75cqw);grid-auto-flow:column;grid-auto-columns:1.75cqw;gap:.2cqw;justify-content:start;
+  width:28.2cqw;height:12.5cqw;padding:.3cqw;overflow:hidden;background:#0004;border:.2cqw solid #d9b84a88;border-radius:.6cqw}
+.bd{border-radius:50%}.bd.p{background:#2a5db0}.bd.b{background:#b3202a}.bd.t{background:#1d7a46}
+.baccarat .spots{display:flex;gap:1cqw}
+.tbl .spot2{position:relative;width:17.6cqw;height:11.5cqw;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4cqw;
+  border:.3cqw solid #d9b84a;border-radius:1.2cqw;background:#0b2a1c99;box-shadow:none;text-shadow:none}
+.tbl .spot2:active{transform:none;filter:brightness(1.3);box-shadow:none}
+.spot2 .nm{font-size:2.4cqw;font-weight:800;letter-spacing:.2cqw}.spot2 .pay{font-size:1.5cqw;color:#e2c262}
+.spot2 .mk{position:static;transform:none}
+.tbl .spot2.won{background:#f0cb6244;box-shadow:0 0 2cqw #f0cb62}
+.bside{display:flex;flex-direction:column;gap:1cqw;width:10cqw}.tbl .bside button{font-size:1.8cqw;padding:1cqw .4cqw}

@@ -7,3 +7,8 @@ export const makeShoe = (decks = 1) => {
   for (let d = 0; d < decks; d++) for (const s of SUITS) for (const r of RANKS) a.push({ r, s });
   return shuffle(a);
 };
+const SUIT = { s: '♠', h: '♥', d: '♦', c: '♣' };
+// Card face as HTML (styles in table.css). Pass null for a face-down card.
+export const cardHTML = c => c
+  ? `<span class="card ${c.s === 'h' || c.s === 'd' ? 'red' : ''}">${c.r}<i>${SUIT[c.s]}</i><b>${SUIT[c.s]}</b></span>`
+  : '<span class="card down"></span>';

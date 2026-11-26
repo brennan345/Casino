@@ -9,6 +9,7 @@ import craps from './games/craps/rules.js';
 import holdem from './games/holdem/rules.js';
 import * as bjui from './games/blackjack/ui.js';
 import * as rlui from './games/roulette/ui.js';
+import * as bcui from './games/baccarat/ui.js';
 
 const GAMES = [
   { id: 'blackjack', rules: blackjack, phase: 1 },
@@ -66,7 +67,7 @@ function renderHome() {
 }
 
 function renderTable(g) {
-  const ui = { blackjack: bjui, roulette: rlui }[g.id];
+  const ui = { blackjack: bjui, roulette: rlui, baccarat: bcui }[g.id];
   if (ui) {
     $app.innerHTML = `<div class="table-screen"><div class="stage tbl ${g.id}" id="stage"></div></div>`;
     ui.mount(document.getElementById('stage'), () => { location.hash = '#/'; });
