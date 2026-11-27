@@ -111,3 +111,27 @@
 .spot2 .mk{position:static;transform:none}
 .tbl .spot2.won{background:#f0cb6244;box-shadow:0 0 2cqw #f0cb62}
 .bside{display:flex;flex-direction:column;gap:1cqw;width:10cqw}.tbl .bside button{font-size:1.8cqw;padding:1cqw .4cqw}
+
+/* Craps (pass 1) */
+.craps .cbody{display:flex;gap:1.5cqw;justify-content:center;align-items:flex-start;height:32cqw}
+.craps .cfelt{position:relative;width:76cqw;height:32cqw;flex:none}
+.tbl .cz{display:flex;align-items:center;justify-content:center;gap:1cqw;white-space:nowrap}
+.cz .lb{font-size:2cqw;letter-spacing:.2cqw;line-height:1.05;font-weight:800}
+.cz .sm{font-size:1.3cqw;color:#e2c262;font-weight:600}
+.cz .num{font-size:2.8cqw;color:#f0cb62}
+.cell.pt{box-shadow:inset 0 0 0 .4cqw #fff}
+.pl{background:#f0cb62;color:#241800;font-size:1.3cqw;font-weight:800;border-radius:1cqw;padding:.1cqw .6cqw;white-space:nowrap;line-height:1.3}
+.pl.od{background:#7fb2ff}
+.dice{position:absolute;display:flex;gap:1cqw;pointer-events:none;z-index:4}
+.die{width:5cqw;height:5cqw;background:#fffdf6;border-radius:.9cqw;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);padding:.5cqw;box-shadow:0 .3cqw .5cqw #000a}
+.die i{border-radius:50%;margin:.1cqw}.die i.on{background:#111}
+.die.tumble{animation:tumble .2s linear infinite}
+@keyframes tumble{to{transform:rotate(90deg)}}
+.craps .cside{width:18.5cqw;flex:none;display:flex;flex-direction:column;align-items:center;gap:1cqw}
+.craps .cside small{font-size:1.2cqw;letter-spacing:.25cqw;color:#c9a24a}
+.puck{width:8.5cqw;height:8.5cqw;border-radius:50%;display:grid;place-items:center;text-align:center;font-weight:800;font-size:2cqw;line-height:1.1;background:#111;color:#fff;border:.4cqw solid #888;box-shadow:0 .4cqw .8cqw #000a}
+.puck.on{background:#fff;color:#111;border-color:#f0cb62}
+.craps .hist{display:flex;flex-wrap:wrap;gap:.5cqw;justify-content:center;max-height:6.5cqw;overflow:hidden}
+.craps .pill{width:2.7cqw;height:2.7cqw;font-size:1.3cqw}
+.craps .sbtns{display:flex;gap:.6cqw}.tbl .craps .sbtns button,.craps .cside button{padding:.9cqw .8cqw;font-size:1.6cqw}
+.craps .coach span{max-height:5cqw;overflow:hidden;font-size:1.55cqw}

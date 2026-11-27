@@ -1,9 +1,12 @@
 export default {
-  title: "Craps",
+  title: 'Craps',
   sections: [
-    { h: 'How it works', p: 'Coming in Phase 4.' },
-    { h: 'Bets and actions', p: 'Coming in Phase 4.' },
-    { h: 'Payouts', p: 'Coming in Phase 4.' },
-    { h: 'House edge', p: 'Coming in Phase 4.' }
+    { h: 'How it works', p: 'A shooter rolls two dice. The first roll of a round is the come-out roll. A 7 or 11 wins the Pass Line and a 2, 3 or 12 loses it. Any other total (4, 5, 6, 8, 9, 10) becomes the point, and the shooter keeps rolling until the point repeats (Pass Line wins) or a 7 shows up (seven-out, Pass Line loses). Then a new round starts. The OFF/ON puck on the right shows whether a point is set. Table limits: $5 minimum, $500 maximum per bet.' },
+    { h: 'Pass and Don\'t Pass', p: 'Pass Line bets can only be made before the point is set. Pass wins on 7/11 and loses on 2/3/12 on the come-out, and after that wins if the point repeats before a 7. Don\'t Pass is the opposite, except a 12 on the come-out is a push (bar 12). Both pay 1 to 1. Once the point is set you cannot take these bets down.' },
+    { h: 'Come and Don\'t Come', p: 'Come works like a Pass Line bet that you can make any time the point is on: your next roll is its own come-out. A 7 or 11 wins, 2/3/12 loses, and any other number moves your bet to that number, where it wins if the number repeats before a 7. Don\'t Come is the opposite (12 is a push). Both pay 1 to 1.' },
+    { h: 'Odds', p: 'Once a point or a Come number is set, you can back the bet with odds. You can take up to 3x your flat bet on 4 and 10, 4x on 5 and 9, and 5x on 6 and 8. Odds pay true odds: 2 to 1 on 4/10, 3 to 2 on 5/9, 6 to 5 on 6/8. Lay odds on Don\'t bets pay the reverse (1 to 2, 2 to 3, 5 to 6) and you can lay up to 6x. Tap the Pass Line again after the point is set to add odds. For a Come bet, tap the thin strip at the top of its number. For a Don\'t Come bet, tap the strip at the bottom. Odds on Come bets are off on come-out rolls.' },
+    { h: 'Place bets', p: 'Tap a number box to bet that number will roll before a 7. Pays 9 to 5 on 4/10, 7 to 5 on 5/9, 7 to 6 on 6/8. Place bets stay up after they win, and are off on come-out rolls. A 7 takes all of them. Payouts here are exact (no need to bet in multiples of 5 or 6).' },
+    { h: 'Field', p: 'A one-roll bet. Wins on 2, 3, 4, 9, 10, 11, 12 and loses on 5, 6, 7, 8. Pays 1 to 1, except 2 pays 2 to 1 and 12 pays 3 to 1.' },
+    { h: 'House edge', p: 'Pass Line 1.41%. Don\'t Pass 1.36%. Come and Don\'t Come match those. Odds 0%. Place 6/8: 1.52%. Place 5/9: 4.00%. Place 4/10: 6.67%. Field: 2.78%. The best strategy is Pass/Come (or Don\'t) plus the maximum odds you are comfortable with. Hardways and the one-roll proposition bets are coming in the next update.' }
   ]
 };
